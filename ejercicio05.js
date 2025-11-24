@@ -2,6 +2,12 @@ try {
     let x = null;
     x.nombre;
 } catch (e) {
-    console.log("Tipo de error:", e.name);
-    console.log("Mensaje:", e.message);
+    if (e instanceof TypeError) {
+        console.log("Se produjo un TypeError:");
+        console.log("Mensaje:", e.message);
+
+    } else {
+        console.log("Error general:");
+        console.log("Tipo:", e.name);
+    }
 }
